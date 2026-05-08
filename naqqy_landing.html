@@ -600,17 +600,34 @@ function submitOrder(){
   var pn='نقّي ستور — أقراص تنظيف الغسالة الأصلية';
   var payLabel=payMode==='tr'?('تحويل مسبق - '+curTM):'دفع عند الاستلام';
   var waf=wa||phone;
-  var params=new URLSearchParams({
-    productName:pn,name:name,phone:phone,whatsapp:waf,
-    gov:gov,address:addr,notes:notes||'—',
-    bundle:b.lbl,price:String(fp),payMethod:payLabel,
-    coupon:coup||'—',timestamp:new Date().toLocaleString('ar-EG')
-  });
   var gsUrl='https://script.google.com/macros/s/AKfycbwwvJJWm4IeULo8EZrYh5j7ByyBosl_FjgboRBKwYzgrH5H_Bs_H7tIC-yjECiyQ-zk/exec';
   if(typeof fbq!=='undefined')fbq('track','Purchase',{value:fp,currency:'EGP'});
-  fetch(gsUrl+'?'+params.toString(),{method:'GET',mode:'no-cors'})
-    .then(function(){showSuc(payMode,{pn:pn,name:name,phone:waf,gov:gov,addr:addr,bundle:b.lbl,price:fp,pay:payLabel,coup:coup,notes:notes||'—'})})
-    .catch(function(){showSuc(payMode,{pn:pn,name:name,phone:waf,gov:gov,addr:addr,bundle:b.lbl,price:fp,pay:payLabel,coup:coup,notes:notes||'—'})});
+  // Send as POST with JSON — matches Apps Script doPost
+  var orderData = {
+    productName: pn,
+    product: pn,
+    name: name,
+    phone: phone,
+    whatsapp: waf,
+    gov: gov,
+    address: addr,
+    notes: notes||'—',
+    bundle: b.lbl,
+    qty: String(b.qty),
+    price: String(fp),
+    payMethod: payLabel,
+    coupon: coup||'—',
+    timestamp: new Date().toLocaleString('ar-EG')
+  };
+  var sucData = {pn:pn,name:name,phone:waf,gov:gov,addr:addr,bundle:b.lbl,price:fp,pay:payLabel,coup:coup,notes:notes||'—'};
+  // POST with no-cors (Apps Script handles it)
+  fetch(gsUrl, {
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain'},
+    body: JSON.stringify(orderData)
+  }).then(function(){showSuc(payMode,sucData)})
+    .catch(function(){showSuc(payMode,sucData)});
 }
 function showSuc(mode,o){
   var els=document.querySelectorAll('.ftitle,.fsub,#bDisp,.fg,.ptabs,.pp,#subBtn,.sr,#oSum,.priv');

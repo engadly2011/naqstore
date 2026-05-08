@@ -285,23 +285,19 @@ function addToOrder(){
   if(typeof fbq!=='undefined')fbq('track','Purchase',{value:prices[qty],currency:'EGP',content_name:'shoe_bag_upsell'});
   // Update Google Sheet with upsell
   fetch('https://script.google.com/macros/s/AKfycbwwvJJWm4IeULo8EZrYh5j7ByyBosl_FjgboRBKwYzgrH5H_Bs_H7tIC-yjECiyQ-zk/exec',{
-    method:'POST',mode:'no-cors',
-    headers:{'Content-Type':'application/json'},
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain'},
     body:JSON.stringify({
-      'اسم المنتج': 'كيس غسيل الأحذية في الغسالة',
-      'الكمية': qty,
-      'السعر': prices[qty],
-      'نوع الطلب': 'أب-سيل',
-      'التاريخ والوقت': new Date().toLocaleString('ar-EG'),
-      // English backup
-      productName: 'كيس غسيل الأحذية في الغسالة',
-      upsell: 'كيس غسيل الأحذية',
-      qty: qty,
-      price: prices[qty],
-      type: 'UPSELL_ORDER',
+      product: 'Upsell — كيس غسيل الأحذية',
+      productName: 'Upsell — كيس غسيل الأحذية',
+      name: '',
+      phone: '',
+      qty: String(qty),
+      price: String(prices[qty]),
       timestamp: new Date().toLocaleString('ar-EG')
     })
-  }).then(()=>goToSuccess()).catch(()=>goToSuccess());
+  }).then(function(){goToSuccess()}).catch(function(){goToSuccess()});
 }
 
 function goToSuccess(){
