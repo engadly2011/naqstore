@@ -12,12 +12,17 @@ fbq('init','256380783472116');fbq('track','PageView');
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Cairo',sans-serif;background:#f0fdf4;color:#1a1a1a;overflow-x:hidden;max-width:480px;margin:0 auto}
-:root{--g1:#16a34a;--g2:#22c55e;--g3:#4ade80;--g4:#dcfce7;--teal:#0d9488;--gold:#f59e0b;--red:#dc2626;--dark:#064e3b}
-.ticker{background:var(--dark);overflow:hidden;height:34px;display:flex;align-items:center;position:relative;border-bottom:2px solid var(--g2)}
-.ticker::before{content:'';position:absolute;left:0;top:0;bottom:0;width:50px;background:linear-gradient(90deg,var(--dark),transparent);z-index:2}
-.ticker::after{content:'';position:absolute;right:0;top:0;bottom:0;width:50px;background:linear-gradient(270deg,var(--dark),transparent);z-index:2}
-.t-live{position:absolute;right:10px;z-index:3;display:flex;align-items:center;gap:4px;background:var(--dark);padding:0 6px}
+body{font-family:'Cairo',sans-serif;background:#0f172a;color:#e2e8f0;overflow-x:hidden;max-width:480px;margin:0 auto}
+:root{
+  --g1:#1e40af;--g2:#3b82f6;--g3:#93c5fd;--g4:#eff6ff;
+  --teal:#0ea5e9;--gold:#f59e0b;--gold2:#fbbf24;
+  --red:#dc2626;--dark:#0f172a;--dark2:#1e3a5f;
+  --accent:#60a5fa;--electric:#38bdf8
+}
+.ticker{background:#0f172a;overflow:hidden;height:34px;display:flex;align-items:center;position:relative;border-bottom:2px solid var(--g2)}
+.ticker::before{content:'';position:absolute;left:0;top:0;bottom:0;width:50px;background:linear-gradient(90deg,#080e1f,transparent);z-index:2}
+.ticker::after{content:'';position:absolute;right:0;top:0;bottom:0;width:50px;background:linear-gradient(270deg,#080e1f,transparent);z-index:2}
+.t-live{position:absolute;right:10px;z-index:3;display:flex;align-items:center;gap:4px;background:#0f172a;padding:0 6px}
 .ldot{width:7px;height:7px;border-radius:50%;background:var(--g2);animation:bl .8s infinite alternate;}
 @keyframes bl{from{opacity:1}to{opacity:.3}}
 .llbl{font-size:10px;color:var(--g2);font-weight:700}
@@ -25,8 +30,8 @@ body{font-family:'Cairo',sans-serif;background:#f0fdf4;color:#1a1a1a;overflow-x:
 @keyframes tscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .ti{display:inline-flex;align-items:center;gap:5px;padding:0 20px;font-size:11px;color:#ccc}
 .ti .tn{color:#fff;font-weight:700}.ti .ta{color:var(--g3)}
-.excl{background:linear-gradient(90deg,var(--gold),#fbbf24,var(--gold));padding:8px 14px;text-align:center;font-size:12px;font-weight:900;color:#000}
-.hero{background:linear-gradient(160deg,var(--dark) 0%,#065f46 60%,#047857 100%);position:relative;overflow:hidden}
+.excl{background:linear-gradient(90deg,#0a0f1e,#1e3a5f,#0a0f1e);border-bottom:1px solid rgba(59,130,246,.3);padding:8px 14px;text-align:center;font-size:12px;font-weight:900;color:#fff}
+.hero{background:linear-gradient(160deg,#0a0f1e 0%,#0d1f3c 50%,#1e3a5f 100%);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-60px;left:-60px;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.12),transparent 70%);pointer-events:none}
 .top-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
 .brand{font-size:17px;font-weight:900;color:#fff}
@@ -36,10 +41,10 @@ body{font-family:'Cairo',sans-serif;background:#f0fdf4;color:#1a1a1a;overflow-x:
 .hook-q{font-size:21px;font-weight:900;color:#fff;line-height:1.35;margin-bottom:6px}
 .hook-q .pain{color:#fca5a5}.hook-q .sol{color:var(--g3)}
 .hook-p{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--g3);font-weight:700}
-.gif-wrap{margin:0 14px 0;border-radius:14px;overflow:hidden;border:2px solid var(--g2);position:relative;background:#000}
+.gif-wrap{margin:0 14px 0;border-radius:14px;overflow:hidden;border:2px solid rgba(59,130,246,.4);position:relative;background:#000}
 .gif-wrap img{width:100%;display:block}
 .gif-lbl{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(6,78,59,.85));padding:10px 12px 8px;font-size:12px;font-weight:700;color:#fff;text-align:center}
-.pslider{margin:12px 14px 0;border-radius:14px;overflow:hidden;border:1.5px solid #d1fae5;position:relative}
+.pslider{margin:12px 14px 0;border-radius:14px;overflow:hidden;border:1.5px solid rgba(59,130,246,.3);position:relative}
 .ptrack{display:flex;transition:transform .35s ease}
 .pslide{min-width:100%}.pslide img{width:100%;display:block;max-height:340px;object-fit:cover}
 .slbtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(6,78,59,.55);border:none;color:#fff;font-size:22px;width:34px;height:34px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2}
@@ -47,146 +52,146 @@ body{font-family:'Cairo',sans-serif;background:#f0fdf4;color:#1a1a1a;overflow-x:
 .pdots{display:flex;justify-content:center;gap:5px;margin-top:7px}
 .pdot{width:6px;height:6px;border-radius:50%;background:rgba(22,163,74,.3);cursor:pointer;transition:.3s}
 .pdot.active{background:var(--g1);width:18px;border-radius:3px}
-.comp{margin:12px 14px 0;background:#fff;border:1.5px solid #e5e7eb;border-radius:14px;padding:12px}
-.comp-t{font-size:13px;font-weight:700;color:var(--dark);text-align:center;margin-bottom:10px}
+.comp{margin:12px 14px 0;background:#1e293b;border:1.5px solid rgba(59,130,246,.2);border-radius:14px;padding:12px}
+.comp-t{font-size:13px;font-weight:700;color:#e2e8f0;text-align:center;margin-bottom:10px}
 .comp-g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cc{border-radius:10px;padding:10px 8px}
-.cc.them{background:#fff7f7;border:1.5px solid #fca5a5}
-.cc.us{background:#f0fdf4;border:1.5px solid var(--g2)}
+.cc.them{background:rgba(220,38,38,.1);border:1.5px solid rgba(220,38,38,.3)}
+.cc.us{background:rgba(30,64,175,.1);border:1.5px solid var(--g2)}
 .cc-h{font-size:11px;font-weight:700;text-align:center;padding:4px 6px;border-radius:6px;margin-bottom:8px}
-.cc.them .cc-h{background:#fee2e2;color:var(--red)}
-.cc.us .cc-h{background:#dcfce7;color:var(--g1)}
+.cc.them .cc-h{background:rgba(220,38,38,.15);color:#f87171}
+.cc.us .cc-h{background:rgba(30,64,175,.2);color:var(--g3)}
 .ci{font-size:10px;margin-bottom:5px;display:flex;gap:4px;line-height:1.4}
 .ci.bad{color:var(--red)}.ci.good{color:var(--g1)}
 .stats{margin:12px 14px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px}
-.stat{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:10px 6px;text-align:center}
+.stat{background:#1e293b;border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:10px 6px;text-align:center}
 .sn{font-size:21px;font-weight:900;color:var(--g1);line-height:1;margin-bottom:2px}
-.sl{font-size:10px;color:#6b7280;line-height:1.4}
-.countdown{background:#fff;border:1.5px solid #fca5a5;border-radius:12px;padding:12px;margin:12px 14px 0;text-align:center}
+.sl{font-size:10px;color:#64748b;line-height:1.4}
+.countdown{background:#1e293b;border:1.5px solid rgba(220,38,38,.4);border-radius:12px;padding:12px;margin:12px 14px 0;text-align:center}
 .cd-t{font-size:12px;color:var(--red);font-weight:700;margin-bottom:8px}
 .cd-bs{display:flex;justify-content:center;gap:7px}
-.cdb{background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:6px 13px;text-align:center}
+.cdb{background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);border-radius:8px;padding:6px 13px;text-align:center}
 .cdn{font-size:22px;font-weight:900;color:var(--red);line-height:1}
-.cdl{font-size:9px;color:#9ca3af;margin-top:2px}
+.cdl{font-size:9px;color:#475569;margin-top:2px}
 .bundles{margin:12px 14px 0;background:#fff;border-radius:16px;padding:14px;border:1px solid #e5e7eb}
-.bt{font-size:14px;font-weight:700;color:var(--dark);text-align:center;margin-bottom:4px}
-.bs{font-size:11px;color:#6b7280;text-align:center;margin-bottom:12px}
+.bt{font-size:14px;font-weight:700;color:#e2e8f0;text-align:center;margin-bottom:4px}
+.bs{font-size:11px;color:#64748b;text-align:center;margin-bottom:12px}
 .bcards{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.bc{background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:12px;padding:10px 8px;text-align:center;cursor:pointer;transition:.2s;position:relative}
-.bc.sel{border-color:var(--g1);background:var(--g4);box-shadow:0 0 0 2px rgba(22,163,74,.15)}
+.bc{background:rgba(15,23,42,.6);border:1.5px solid #e5e7eb;border-radius:12px;padding:10px 8px;text-align:center;cursor:pointer;transition:.2s;position:relative}
+.bc.sel{border-color:var(--g1);background:rgba(30,64,175,.12);box-shadow:0 0 0 2px rgba(22,163,74,.15)}
 .bc.hot{border-color:var(--teal)}
 .bc.mega{border-color:var(--gold)}
 .hbadge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);font-size:9px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;color:#fff}
 .hb-t{background:var(--teal)}.hb-g{background:var(--gold);color:#000}
 .bqty{font-size:24px;font-weight:900;color:var(--g1);line-height:1;margin-bottom:1px}
-.bunit{font-size:9px;color:#9ca3af;margin-bottom:4px}
-.bprice{font-size:16px;font-weight:900;color:#1f2937}
+.bunit{font-size:9px;color:#475569;margin-bottom:4px}
+.bprice{font-size:16px;font-weight:900;color:#e2e8f0}
 .bup{font-size:9px;color:var(--teal);font-weight:600;margin-top:1px}
 .bsave{font-size:9px;color:var(--g1);font-weight:700;margin-top:2px}
-.psec{margin:10px 14px 0;background:linear-gradient(135deg,var(--g4),#d1fae5);border:2px solid var(--g2);border-radius:14px;padding:14px;text-align:center}
-.pold{font-size:13px;color:#9ca3af;text-decoration:line-through}
+.psec{margin:10px 14px 0;background:linear-gradient(135deg,rgba(30,64,175,.15),rgba(14,165,233,.1));border:2px solid var(--g2);border-radius:14px;padding:14px;text-align:center}
+.pold{font-size:13px;color:#475569;text-decoration:line-through}
 .prow{display:flex;align-items:baseline;justify-content:center;gap:5px;margin:3px 0}
 .pnum{font-size:40px;font-weight:900;color:var(--g1);line-height:1}
 .pcur{font-size:16px;color:var(--teal)}
 .psave-b{display:inline-block;background:var(--red);color:#fff;font-size:11px;font-weight:700;padding:3px 12px;border-radius:20px;margin-top:3px}
 .pship{font-size:12px;color:var(--g1);font-weight:700;margin-top:6px}
-.stock{margin:10px 14px 0;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px}
+.stock{margin:10px 14px 0;background:#1e293b;border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:10px 12px}
 .stxt{font-size:12px;color:var(--red);font-weight:600;text-align:center;margin-bottom:6px}
 .bbg{background:#fee2e2;border-radius:20px;height:7px;overflow:hidden}
 .bfill{height:100%;width:21%;background:linear-gradient(90deg,var(--red),#f87171);border-radius:20px;animation:fill 1.5s ease-out;}
 @keyframes fill{from{width:0}to{width:21%}}
-.blbls{display:flex;justify-content:space-between;font-size:10px;color:#9ca3af;margin-top:4px}
-.fomo{margin:10px 14px 0;background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid var(--gold);border-radius:10px;padding:9px;text-align:center;font-size:12px;color:#92400e;font-weight:600}
-.oform{margin:14px 14px 0;background:#fff;border:2px solid var(--g2);border-radius:18px;padding:16px;box-shadow:0 4px 20px rgba(22,163,74,.1)}
-.ftitle{font-size:16px;font-weight:900;color:var(--dark);text-align:center;margin-bottom:4px}
-.fsub{font-size:12px;color:#6b7280;text-align:center;margin-bottom:14px}
+.blbls{display:flex;justify-content:space-between;font-size:10px;color:#475569;margin-top:4px}
+.fomo{margin:10px 14px 0;background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(251,191,36,.08));border:1px solid var(--gold);border-radius:10px;padding:9px;text-align:center;font-size:12px;color:#92400e;font-weight:600}
+.oform{margin:14px 14px 0;background:#1e293b;border:2px solid var(--g2);border-radius:18px;padding:16px;box-shadow:0 4px 20px rgba(22,163,74,.1)}
+.ftitle{font-size:16px;font-weight:900;color:#e2e8f0;text-align:center;margin-bottom:4px}
+.fsub{font-size:12px;color:#64748b;text-align:center;margin-bottom:14px}
 .fg{margin-bottom:11px}
 .fl{font-size:12px;color:var(--teal);font-weight:600;margin-bottom:5px;display:block}
-.fi{width:100%;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;padding:11px 13px;color:#1f2937;font-family:'Cairo',sans-serif;font-size:14px;outline:none;transition:.2s}
-.fi:focus{border-color:var(--g1);background:var(--g4)}
-.fi::placeholder{color:#9ca3af}
-select.fi option{background:#fff;color:#1f2937}
-.bdisp{background:var(--g4);border:1px solid var(--g2);border-radius:10px;padding:10px;text-align:center;margin-bottom:12px;font-size:13px;color:var(--g1);font-weight:700}
+.fi{width:100%;background:rgba(15,23,42,.6);border:1.5px solid rgba(59,130,246,.3);border-radius:10px;padding:11px 13px;color:#e2e8f0;font-family:'Cairo',sans-serif;font-size:14px;outline:none;transition:.2s}
+.fi:focus{border-color:var(--g1);background:rgba(30,64,175,.12)}
+.fi::placeholder{color:#475569}
+select.fi option{background:#fff;color:#e2e8f0}
+.bdisp{background:rgba(30,64,175,.12);border:1px solid var(--g2);border-radius:10px;padding:10px;text-align:center;margin-bottom:12px;font-size:13px;color:var(--g1);font-weight:700}
 .ptabs{display:flex;gap:6px;margin-bottom:12px}
-.ptab{flex:1;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;padding:8px 4px;text-align:center;cursor:pointer;font-size:11px;font-weight:700;color:#6b7280;transition:.2s}
-.ptab.active{border-color:var(--g1);background:var(--g4);color:var(--g1)}
+.ptab{flex:1;background:rgba(15,23,42,.6);border:1.5px solid #e5e7eb;border-radius:10px;padding:8px 4px;text-align:center;cursor:pointer;font-size:11px;font-weight:700;color:#64748b;transition:.2s}
+.ptab.active{border-color:var(--g1);background:rgba(30,64,175,.12);color:var(--g1)}
 .ptab-i{font-size:17px;display:block;margin-bottom:2px}
 .pp{display:none}.pp.active{display:block}
-.cod-box{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:12px;text-align:center;margin-bottom:10px}
-.cod-box strong{font-size:13px;color:var(--dark);display:block;margin-bottom:2px}
-.cod-box span{font-size:11px;color:#6b7280}
-.tr-deal{background:linear-gradient(135deg,var(--g4),#d1fae5);border:2px solid var(--g2);border-radius:12px;padding:12px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden}
+.cod-box{background:rgba(15,23,42,.6);border:1px solid #e5e7eb;border-radius:10px;padding:12px;text-align:center;margin-bottom:10px}
+.cod-box strong{font-size:13px;color:#e2e8f0;display:block;margin-bottom:2px}
+.cod-box span{font-size:11px;color:#64748b}
+.tr-deal{background:linear-gradient(135deg,rgba(30,64,175,.15),rgba(14,165,233,.1));border:2px solid var(--g2);border-radius:12px;padding:12px;text-align:center;margin-bottom:10px;position:relative;overflow:hidden}
 .tr-deal::before{content:'⚡ خصم 10% إضافي';position:absolute;top:0;right:0;background:var(--g1);color:#fff;font-size:9px;font-weight:700;padding:3px 10px;border-radius:0 12px 0 10px;font-family:'Cairo',sans-serif}
 .trd-t{font-size:12px;font-weight:700;color:var(--g1);margin-top:4px;margin-bottom:4px}
 .trd-p{font-size:26px;font-weight:900;color:var(--g1);line-height:1}
-.trd-o{font-size:11px;color:#9ca3af;text-decoration:line-through;margin-bottom:2px}
+.trd-o{font-size:11px;color:#475569;text-decoration:line-through;margin-bottom:2px}
 .trd-s{font-size:11px;color:var(--teal);font-weight:700}
 .tr-ms{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-bottom:12px}
-.trm{background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;padding:8px 5px;text-align:center;cursor:pointer;transition:.2s}
-.trm.sel{border-color:var(--g1);background:var(--g4)}
+.trm{background:rgba(15,23,42,.6);border:1.5px solid #e5e7eb;border-radius:10px;padding:8px 5px;text-align:center;cursor:pointer;transition:.2s}
+.trm.sel{border-color:var(--g1);background:rgba(30,64,175,.12)}
 .trm img{height:28px;object-fit:contain;display:block;margin:0 auto 4px}
-.trm .mn{font-size:9px;color:#6b7280;font-weight:700}
-.tr-det{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:12px;margin-bottom:12px;text-align:center}
-.tr-num{font-size:19px;font-weight:900;color:var(--dark);letter-spacing:2px;direction:ltr;margin-bottom:4px}
-.tr-note{font-size:11px;color:#6b7280}
-.ubox{background:#f9fafb;border:1.5px dashed var(--g2);border-radius:10px;padding:12px;text-align:center;cursor:pointer;margin-bottom:10px}
+.trm .mn{font-size:9px;color:#64748b;font-weight:700}
+.tr-det{background:rgba(15,23,42,.6);border:1px solid #e5e7eb;border-radius:10px;padding:12px;margin-bottom:12px;text-align:center}
+.tr-num{font-size:19px;font-weight:900;color:#e2e8f0;letter-spacing:2px;direction:ltr;margin-bottom:4px}
+.tr-note{font-size:11px;color:#64748b}
+.ubox{background:rgba(15,23,42,.6);border:1.5px dashed var(--g2);border-radius:10px;padding:12px;text-align:center;cursor:pointer;margin-bottom:10px}
 .ubox input{display:none}
-.uico{font-size:24px;margin-bottom:3px}.utxt{font-size:12px;color:var(--g1);font-weight:600}.usub{font-size:10px;color:#9ca3af;margin-top:2px}
+.uico{font-size:24px;margin-bottom:3px}.utxt{font-size:12px;color:var(--g1);font-weight:600}.usub{font-size:10px;color:#475569;margin-top:2px}
 .uprev{max-width:100px;max-height:100px;border-radius:8px;margin:8px auto 0;display:none;border:2px solid var(--g2)}
-.wa-n{background:#f0fdf4;border:1px solid var(--g2);border-radius:8px;padding:9px;text-align:center;font-size:11px;color:var(--g1);margin-bottom:8px}
+.wa-n{background:rgba(30,64,175,.1);border:1px solid var(--g2);border-radius:8px;padding:9px;text-align:center;font-size:11px;color:var(--g1);margin-bottom:8px}
 .coup-row{display:flex;gap:7px;margin-bottom:11px}
-.coup-inp{flex:1;background:#f9fafb;border:1.5px solid #e5e7eb;border-radius:10px;padding:10px 12px;color:#1f2937;font-family:'Cairo',sans-serif;font-size:13px;outline:none;transition:.2s}
+.coup-inp{flex:1;background:rgba(15,23,42,.6);border:1.5px solid rgba(59,130,246,.3);border-radius:10px;padding:10px 12px;color:#e2e8f0;font-family:'Cairo',sans-serif;font-size:13px;outline:none;transition:.2s}
 .coup-btn{background:var(--gold);color:#000;font-family:'Cairo',sans-serif;font-size:12px;font-weight:700;padding:10px 14px;border:none;border-radius:10px;cursor:pointer;white-space:nowrap}
-.osum{background:var(--g4);border:1px solid var(--g2);border-radius:10px;padding:12px;margin-bottom:12px}
-.os-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid rgba(22,163,74,.15)}
-.os-row:last-child{border-bottom:none;font-weight:700;font-size:14px;color:var(--g1);padding-top:7px}
-.priv{display:flex;align-items:center;gap:6px;font-size:11px;color:#6b7280;margin-bottom:12px;background:#f9fafb;border-radius:8px;padding:8px 10px}
+.osum{background:rgba(30,64,175,.12);border:1px solid var(--g2);border-radius:10px;padding:12px;margin-bottom:12px}
+.os-row{display:flex;justify-content:space-between;font-size:12px;padding:4px 0;border-bottom:1px solid rgba(59,130,246,.15)}
+.os-row:last-child{border-bottom:none;font-weight:700;font-size:14px;color:var(--g2);padding-top:7px}
+.priv{display:flex;align-items:center;gap:6px;font-size:11px;color:#64748b;margin-bottom:12px;background:rgba(15,23,42,.6);border-radius:8px;padding:8px 10px}
 .sub-btn{width:100%;background:linear-gradient(135deg,var(--g1),var(--teal));color:#fff;font-family:'Cairo',sans-serif;font-size:17px;font-weight:900;padding:16px;border:none;border-radius:12px;cursor:pointer;position:relative;overflow:hidden;animation:gg 2s infinite;margin-bottom:8px;}
 .sub-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);animation:shine 2s infinite;}
 @keyframes shine{to{left:100%}}
 @keyframes gg{0%,100%{box-shadow:0 4px 20px rgba(22,163,74,.4)}50%{box-shadow:0 4px 40px rgba(22,163,74,.8)}}
-.sr{display:flex;justify-content:center;gap:10px;font-size:10px;color:#9ca3af;flex-wrap:wrap}
+.sr{display:flex;justify-content:center;gap:10px;font-size:10px;color:#475569;flex-wrap:wrap}
 .suc{display:none;text-align:center;padding:16px 8px}
 .suc-i{font-size:52px;margin-bottom:10px;animation:pop .5s ease;}
 @keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
 .suc-t{font-size:19px;font-weight:900;color:var(--g1);margin-bottom:6px}
-.suc-s{font-size:13px;color:#6b7280;line-height:1.7}
+.suc-s{font-size:13px;color:#64748b;line-height:1.7}
 .wa-sbtn{display:block;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-family:'Cairo',sans-serif;font-size:15px;font-weight:900;padding:14px;border-radius:12px;text-decoration:none;text-align:center;margin-top:14px}
 .benefits{margin:14px 14px 0;background:#fff;border-radius:16px;padding:14px;border:1px solid #e5e7eb}
-.sectit{font-size:14px;font-weight:700;color:var(--dark);text-align:center;margin-bottom:11px}
+.sectit{font-size:14px;font-weight:700;color:#e2e8f0;text-align:center;margin-bottom:11px}
 .bengrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.bcard{background:var(--g4);border:1px solid #bbf7d0;border-radius:11px;padding:10px;text-align:center}
-.bico{font-size:22px;margin-bottom:4px}.btit{font-size:11px;font-weight:700;color:var(--dark);margin-bottom:2px}.bdesc{font-size:10px;color:#4b5563;line-height:1.5}
+.bcard{background:rgba(30,64,175,.15);border:1px solid rgba(59,130,246,.3);border-radius:11px;padding:10px;text-align:center}
+.bico{font-size:22px;margin-bottom:4px}.btit{font-size:11px;font-weight:700;color:#e2e8f0;margin-bottom:2px}.bdesc{font-size:10px;color:#94a3b8;line-height:1.5}
 .faq{margin:14px 14px 0;background:#fff;border-radius:16px;padding:14px;border:1px solid #e5e7eb}
-.faq-item{border-bottom:1px solid #f3f4f6;padding:10px 0;cursor:pointer}
+.faq-item{border-bottom:1px solid rgba(59,130,246,.15);padding:10px 0;cursor:pointer}
 .faq-item:last-child{border-bottom:none}
-.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:var(--dark)}
-.faq-a{font-size:12px;color:#6b7280;line-height:1.6;margin-top:6px;display:none}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;color:#e2e8f0}
+.faq-a{font-size:12px;color:#64748b;line-height:1.6;margin-top:6px;display:none}
 .faq-a.open{display:block}
 .reviews{margin:14px 14px 0}
-.rcard{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:11px;margin-bottom:7px}
+.rcard{background:#1e293b;border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:11px;margin-bottom:7px}
 .rhd{display:flex;gap:8px;align-items:center;margin-bottom:5px}
 .av{width:33px;height:33px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;color:#fff;flex-shrink:0}
-.rname{font-size:12px;font-weight:700;color:#1f2937}.rcity{font-size:10px;color:#9ca3af}
+.rname{font-size:12px;font-weight:700;color:#e2e8f0}.rcity{font-size:10px;color:#475569}
 .stars{color:var(--gold);font-size:11px;margin-bottom:3px}
-.rtxt{font-size:12px;color:#4b5563;line-height:1.6}.rvrf{font-size:10px;color:var(--g1);font-weight:600;margin-top:3px}
-.guar{margin:14px 14px;background:var(--g4);border:1.5px solid var(--g2);border-radius:12px;padding:12px;text-align:center}
+.rtxt{font-size:12px;color:#94a3b8;line-height:1.6}.rvrf{font-size:10px;color:var(--g1);font-weight:600;margin-top:3px}
+.guar{margin:14px 14px;background:rgba(30,64,175,.15);border:1.5px solid var(--g2);border-radius:12px;padding:12px;text-align:center}
 .guar strong{font-size:13px;color:var(--g1);display:block;margin-bottom:3px}
-.guar span{font-size:11px;color:#6b7280}
+.guar span{font-size:11px;color:#64748b}
 .wa-float{position:fixed;bottom:88px;left:14px;z-index:998;width:50px;height:50px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:25px;box-shadow:0 4px 16px rgba(37,211,102,.5);animation:wap 2.5s infinite;text-decoration:none;}
 @keyframes wap{0%,100%{box-shadow:0 4px 16px rgba(37,211,102,.4)}50%{box-shadow:0 4px 28px rgba(37,211,102,.8)}}
 .waf-l{position:absolute;top:-24px;left:50%;transform:translateX(-50%);background:#25D366;color:#fff;font-size:9px;font-weight:700;padding:2px 7px;border-radius:8px;white-space:nowrap;font-family:'Cairo',sans-serif}
-.sticky{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(240,253,244,.97);padding:7px 14px 11px;border-top:2px solid var(--g2);z-index:999;backdrop-filter:blur(8px)}
+.sticky{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:rgba(15,23,42,.97);padding:7px 14px 11px;border-top:2px solid rgba(59,130,246,.4);z-index:999;backdrop-filter:blur(8px)}
 .stbtn{width:100%;background:linear-gradient(135deg,var(--g1),var(--teal));color:#fff;font-family:'Cairo',sans-serif;font-size:15px;font-weight:900;padding:14px;border:none;border-radius:12px;cursor:pointer;animation:gg 2s infinite;}
 body{padding-bottom:74px}
-.notif{position:fixed;bottom:86px;right:10px;max-width:210px;background:#fff;border:1.5px solid var(--g2);border-radius:12px;padding:10px 12px;z-index:997;display:none;animation:nsl .4s ease;box-shadow:0 4px 16px rgba(0,0,0,.1)}
+.notif{position:fixed;bottom:86px;right:10px;max-width:210px;background:#1e293b;border:1.5px solid var(--g2);border-radius:12px;padding:10px 12px;z-index:997;display:none;animation:nsl .4s ease;box-shadow:0 4px 16px rgba(0,0,0,.1)}
 @keyframes nsl{from{opacity:0;transform:translateX(100%)}to{opacity:1;transform:translateX(0)}}
 .eov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:9999;align-items:center;justify-content:center;padding:20px}
 .eov.show{display:flex}
-.ebox{background:#fff;border:2px solid var(--g1);border-radius:20px;padding:22px 16px;text-align:center;max-width:320px;width:100%;position:relative}
-.ecl{position:absolute;top:10px;left:12px;background:#f3f4f6;border:none;color:#6b7280;font-size:15px;width:26px;height:26px;border-radius:50%;cursor:pointer}
+.ebox{background:#1e293b;border:2px solid var(--g2);border-radius:20px;padding:22px 16px;text-align:center;max-width:320px;width:100%;position:relative}
+.ecl{position:absolute;top:10px;left:12px;background:#f3f4f6;border:none;color:#64748b;font-size:15px;width:26px;height:26px;border-radius:50%;cursor:pointer}
 .ebtn{width:100%;background:linear-gradient(135deg,var(--g1),var(--teal));color:#fff;font-family:'Cairo',sans-serif;font-size:15px;font-weight:900;padding:13px;border:none;border-radius:11px;cursor:pointer;margin-bottom:7px}
-.eskip{font-size:11px;color:#9ca3af;cursor:pointer}
+.eskip{font-size:11px;color:#475569;cursor:pointer}
 </style>
 </head>
 <body>
@@ -211,13 +216,18 @@ body{padding-bottom:74px}
 <div class="excl">✨ المنتج الأصلي متوفر حصرياً لدى نقّي ستور — أي نسخة تانية غير مضمونة ✨</div>
 
 <div class="hero">
+  <div style="position:absolute;top:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.15),transparent 70%);pointer-events:none"></div>
+  <div style="position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.08),transparent 70%);pointer-events:none"></div>
   <div class="top-bar">
-    <div class="brand">نقّي <span>ستور 🌿</span></div>
-    <div class="orig-b">🏅 الأصلي الحصري</div>
+    <div class="brand" style="display:flex;align-items:center;gap:6px">
+      <span style="background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:8px;padding:3px 8px;font-size:13px;font-weight:900;color:#fff">نقّي</span>
+      <span style="color:#93c5fd;font-size:13px">ستور</span>
+    </div>
+    <div class="orig-b" style="background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(251,191,36,.08));border:1px solid rgba(245,158,11,.4);color:var(--gold);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px">🏅 الأصلي الحصري</div>
   </div>
   <div class="hook">
-    <div class="hook-q">هدومك <span class="pain">بتطلع بريحة؟</span><br>المشكلة في <span class="sol">الغسالة من جوه!</span></div>
-    <div class="hook-p">✅ أكثر من 10,000 عميل راضي</div>
+    <div class="hook-q" style="color:#fff;text-shadow:0 2px 20px rgba(59,130,246,.3)">هدومك <span class="pain">بتطلع بريحة؟</span><br>المشكلة في <span class="sol">الغسالة من جوه!</span></div>
+    <div class="hook-p" style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:#93c5fd">✅ أكثر من 10,000 عميل راضي</div>
   </div>
 </div>
 
@@ -240,36 +250,46 @@ body{padding-bottom:74px}
 </div>
 <div class="pdots" id="pDs"></div>
 
-<div class="comp">
-  <div class="comp-t">👀 شوف الفرق بيننا وبين الباقي</div>
-  <div class="comp-g">
-    <div class="cc them"><div class="cc-h">❌ المنافس</div>
-      <div class="ci bad"><span>✗</span><span>علبة بـ 299 بس</span></div>
-      <div class="ci bad"><span>✗</span><span>ما فيش عروض</span></div>
-      <div class="ci bad"><span>✗</span><span>5 تقييمات بس</span></div>
-      <div class="ci bad"><span>✗</span><span>بدون ضمان واضح</span></div>
-    </div>
-    <div class="cc us"><div class="cc-h">✅ نقّي ستور</div>
-      <div class="ci good"><span>✓</span><span>علبتين بـ 445 = 222 ج/علبة</span></div>
-      <div class="ci good"><span>✓</span><span>4 عروض + شحن مجاني</span></div>
-      <div class="ci good"><span>✓</span><span>+10,000 عميل راضي</span></div>
-      <div class="ci good"><span>✓</span><span>ضمان 30 يوم كامل</span></div>
-    </div>
-  </div>
-</div>
-
 <div class="stats">
   <div class="stat"><div class="sn" id="c1">0</div><div class="sl">طلب هذا الشهر</div></div>
   <div class="stat"><div class="sn" id="c2">0</div><div class="sl">تقييم ⭐⭐⭐⭐⭐</div></div>
   <div class="stat"><div class="sn" id="c3">0</div><div class="sl">% رضا العملاء</div></div>
 </div>
 
-<div class="countdown">
-  <div class="cd-t">⏰ العرض ينتهي خلال:</div>
+<div class="countdown" id="cdWrap">
+  <div class="cd-t" id="cdLabel">🔥 ينتهي العرض خلال — اطلب قبل ما يخلص!</div>
   <div class="cd-bs">
     <div class="cdb"><div class="cdn" id="cdH">02</div><div class="cdl">ساعة</div></div>
-    <div class="cdb"><div class="cdn" id="cdM">47</div><div class="cdl">دقيقة</div></div>
-    <div class="cdb"><div class="cdn" id="cdS">33</div><div class="cdl">ثانية</div></div>
+    <div class="cdb"><div class="cdn" id="cdM">59</div><div class="cdl">دقيقة</div></div>
+    <div class="cdb"><div class="cdn" id="cdS">59</div><div class="cdl">ثانية</div></div>
+  </div>
+  <div style="font-size:11px;color:#475569;text-align:center;margin-top:6px">⚡ السعر هيرجع للأصلي بعد انتهاء العداد</div>
+</div>
+
+<!-- 12 TABLETS VALUE SECTION -->
+<div style="margin:12px 14px 0;background:#1e293b;border:2px solid var(--g2);border-radius:14px;padding:14px;position:relative;overflow:hidden">
+  <div style="position:absolute;top:0;right:0;background:var(--g1);color:#fff;font-size:9px;font-weight:700;padding:3px 10px;border-radius:0 14px 0 10px;font-family:'Cairo',sans-serif">💡 ميزة تنافسية</div>
+  <div style="font-size:14px;font-weight:700;color:#e2e8f0;text-align:center;margin-bottom:12px;margin-top:4px">📦 12 قرص كبير في كل علبة</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+    <div style="background:rgba(30,64,175,.12);border-radius:10px;padding:9px 6px;text-align:center;border:1px solid #bbf7d0">
+      <div style="font-size:22px;font-weight:900;color:var(--g2);line-height:1">12</div>
+      <div style="font-size:10px;color:#94a3b8;margin-top:2px">قرص كبير</div>
+    </div>
+    <div style="background:rgba(30,64,175,.12);border-radius:10px;padding:9px 6px;text-align:center;border:1px solid #bbf7d0">
+      <div style="font-size:22px;font-weight:900;color:var(--g2);line-height:1">12</div>
+      <div style="font-size:10px;color:#94a3b8;margin-top:2px">شهر كامل</div>
+    </div>
+    <div style="background:rgba(30,64,175,.12);border-radius:10px;padding:9px 6px;text-align:center;border:1px solid #bbf7d0">
+      <div style="font-size:22px;font-weight:900;color:var(--g2);line-height:1">1</div>
+      <div style="font-size:10px;color:#94a3b8;margin-top:2px">قرص/شهر</div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px;background:rgba(30,64,175,.1);border-radius:8px;padding:9px 12px">
+    <div style="font-size:20px;flex-shrink:0">💰</div>
+    <div style="font-size:12px;color:#e2e8f0;line-height:1.6">
+      <strong>علبتين بـ 445 جنيه = 222 جنيه للعلبة فقط!</strong><br>
+      اشتري أكتر وفّر أكتر — كل عرض أوفر من اللي قبله ✅
+    </div>
   </div>
 </div>
 
@@ -408,10 +428,82 @@ body{padding-bottom:74px}
 </div>
 
 <div class="reviews" style="margin:14px 14px 0">
-  <div class="sectit">⭐ الأعلى تقييماً</div>
-  <div class="rcard"><div class="rhd"><div class="av" style="background:linear-gradient(135deg,#16a34a,#0d9488)">أ</div><div><div class="rname">أم أحمد</div><div class="rcity">القاهرة · منذ 3 أيام</div></div></div><div class="stars">★★★★★</div><div class="rtxt">منتج مضمون ومجرب. اشتريت 3 علب وبوزعها على أهلي. الغسالة بتطلع ريحتها منعشة 🌿</div><div class="rvrf">✅ مشتري موثق</div></div>
-  <div class="rcard"><div class="rhd"><div class="av" style="background:linear-gradient(135deg,#0369a1,#0d9488)">م</div><div><div class="rname">محمد علي</div><div class="rcity">الإسكندرية · منذ أسبوع</div></div></div><div class="stars">★★★★★</div><div class="rtxt">اشتريت عرض الميجا 4 علب بـ 645 — وفّرت كتير مقارنة بالمنافسين!</div><div class="rvrf">✅ مشتري موثق</div></div>
-  <div class="rcard"><div class="rhd"><div class="av" style="background:linear-gradient(135deg,#7c3aed,#16a34a)">ن</div><div><div class="rname">نورا سعيد</div><div class="rcity">الجيزة · منذ 5 أيام</div></div></div><div class="stars">★★★★☆</div><div class="rtxt">حوّلت مسبقاً وأخدت خصم 10% — الشحن جه سريع والفرق واضح</div><div class="rvrf">✅ مشتري موثق — دفع بتحويل</div></div>
+  <div class="sectit">⭐ آراء عملاؤنا — أكثر من 10,000 مشتري</div>
+
+  <!-- Review summary bar -->
+  <div style="background:#1e293b;border:1px solid rgba(59,130,246,.2);border-radius:14px;padding:14px;margin-bottom:10px;display:flex;gap:14px;align-items:center">
+    <div style="text-align:center;flex-shrink:0">
+      <div style="font-size:40px;font-weight:900;color:var(--g1);line-height:1">4.9</div>
+      <div style="color:#f59e0b;font-size:16px">★★★★★</div>
+      <div style="font-size:10px;color:#475569;margin-top:2px">من 5</div>
+    </div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+        <div style="font-size:10px;color:#64748b;width:16px">5★</div>
+        <div style="flex:1;height:6px;background:rgba(59,130,246,.15);border-radius:3px;overflow:hidden"><div style="width:89%;height:100%;background:var(--g2);border-radius:3px"></div></div>
+        <div style="font-size:10px;color:#64748b">89%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+        <div style="font-size:10px;color:#64748b;width:16px">4★</div>
+        <div style="flex:1;height:6px;background:rgba(59,130,246,.15);border-radius:3px;overflow:hidden"><div style="width:8%;height:100%;background:var(--accent);border-radius:3px"></div></div>
+        <div style="font-size:10px;color:#64748b">8%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px">
+        <div style="font-size:10px;color:#64748b;width:16px">3★</div>
+        <div style="flex:1;height:6px;background:rgba(59,130,246,.15);border-radius:3px;overflow:hidden"><div style="width:3%;height:100%;background:#fbbf24;border-radius:3px"></div></div>
+        <div style="font-size:10px;color:#64748b">3%</div>
+      </div>
+      <div style="font-size:11px;color:#64748b;margin-top:6px">بناءً على 10,247 تقييم موثق</div>
+    </div>
+  </div>
+
+  <div class="rcard">
+    <div class="rhd">
+      <div class="av" style="background:linear-gradient(135deg,#16a34a,#0d9488)">أ</div>
+      <div><div class="rname">أم أحمد — القاهرة</div><div class="rcity">منذ 3 أيام ✅ مشتري موثق</div></div>
+    </div>
+    <div class="stars">★★★★★</div>
+    <div class="rtxt">والله ما صدقت الفرق! الغسالة كانت بتطلع ريحة وحشة من سنتين. استخدمت قرصين من الـ 12 قرص وخلاص — الريحة راحت تماماً 🌿 اشتريت 3 علب وبوزعها على أهلي</div>
+    <div style="background:rgba(30,64,175,.1);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:11px;color:var(--g1)">
+      📦 اشترت: <strong>3 علب (ميجا)</strong> | 💳 دفعت عند الاستلام
+    </div>
+  </div>
+
+  <div class="rcard">
+    <div class="rhd">
+      <div class="av" style="background:linear-gradient(135deg,#0369a1,#0d9488)">م</div>
+      <div><div class="rname">محمد رضا — الإسكندرية</div><div class="rcity">منذ أسبوع ✅ مشتري موثق</div></div>
+    </div>
+    <div class="stars">★★★★★</div>
+    <div class="rtxt">العلبة فيها 12 قرص كبير — يعني سنة كاملة بعلبة واحدة! جربت قرص واحد وشغّلت دورة غسيل عادية، طلع منها ماء متسخ جداً — وده دليل إنه اشتغل فعلاً 💪</div>
+    <div style="background:rgba(30,64,175,.1);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:11px;color:var(--g1)">
+      📦 اشترى: <strong>4 علب (ميجا)</strong> | 💸 حوّل مسبقاً وأخد خصم 10%
+    </div>
+  </div>
+
+  <div class="rcard">
+    <div class="rhd">
+      <div class="av" style="background:linear-gradient(135deg,#7c3aed,#16a34a)">ن</div>
+      <div><div class="rname">نورا سعيد — الجيزة</div><div class="rcity">منذ 5 أيام ✅ مشتري موثق</div></div>
+    </div>
+    <div class="stars">★★★★★</div>
+    <div class="rtxt">جربت منتجات تانية قبل كده وكلها تقليد. الأصلي ده فرق تاني — الـ 12 قرص كافيين سنة كاملة بقرص كل شهر. حوّلت مسبقاً وأخدت خصم 10% وجالي الشحن أسرع 🙌</div>
+    <div style="background:rgba(30,64,175,.1);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:11px;color:var(--g1)">
+      📦 اشترت: <strong>علبتين</strong> | 💸 تحويل مسبق
+    </div>
+  </div>
+
+  <div class="rcard">
+    <div class="rhd">
+      <div class="av" style="background:linear-gradient(135deg,#dc2626,#16a34a)">س</div>
+      <div><div class="rname">سامي الشافعي — المنصورة</div><div class="rcity">منذ يومين ✅ مشتري موثق</div></div>
+    </div>
+    <div class="stars">★★★★☆</div>
+    <div class="rtxt">المنتج ممتاز والـ 12 قرص في العلبة قيمة كبيرة بالسعر ده. بس الشحن اتأخر يوم زيادة. غير كده كل حاجة تمام 👍</div>
+    <div style="background:rgba(30,64,175,.1);border-radius:8px;padding:8px 10px;margin-top:8px;font-size:11px;color:var(--g1)">
+      📦 اشترى: <strong>علبة واحدة</strong> | 💵 دفع عند الاستلام
+    </div>
+  </div>
 </div>
 
 <div class="guar"><strong>🛡️ ضمان استرداد كامل 30 يوم</strong><span>لو مش راضي — هنرجعلك فلوسك</span></div>
@@ -420,9 +512,9 @@ body{padding-bottom:74px}
 
 <div class="sticky"><button class="stbtn" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">🛒 اطلب دلوقتي — <span id="stkP">345</span> ج | شحن مجاني ↓</button></div>
 
-<div class="notif" id="notif"><div style="display:flex;gap:8px;align-items:flex-start"><div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--teal));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;flex-shrink:0" id="nAv">م</div><div><div style="font-size:11px;font-weight:700;color:#1f2937;margin-bottom:2px" id="nNm">أم أحمد</div><div style="font-size:10px;color:var(--g1)" id="nMs">✅ طلبت للتو علبتين</div><div style="font-size:9px;color:#9ca3af;margin-top:2px" id="nTm">الآن</div></div></div></div>
+<div class="notif" id="notif"><div style="display:flex;gap:8px;align-items:flex-start"><div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--teal));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;flex-shrink:0" id="nAv">م</div><div><div style="font-size:11px;font-weight:700;color:#e2e8f0;margin-bottom:2px" id="nNm">أم أحمد</div><div style="font-size:10px;color:var(--g1)" id="nMs">✅ طلبت للتو علبتين</div><div style="font-size:9px;color:#475569;margin-top:2px" id="nTm">الآن</div></div></div></div>
 
-<div class="eov" id="eov"><div class="ebox"><button class="ecl" onclick="document.getElementById('eov').classList.remove('show')">✕</button><div style="font-size:44px;margin-bottom:8px">🎁</div><div style="font-size:17px;font-weight:900;color:var(--g1);margin-bottom:5px">مستنياك!</div><div style="font-size:12px;color:#6b7280;margin-bottom:12px;line-height:1.6">حوّل مسبقاً وخذ خصم 10% إضافي!</div><button class="ebtn" onclick="document.getElementById('eov').classList.remove('show');document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});swPay('tr')">⚡ استفيد من الخصم</button><div class="eskip" onclick="document.getElementById('eov').classList.remove('show')">لا شكراً</div></div></div>
+<div class="eov" id="eov"><div class="ebox"><button class="ecl" onclick="document.getElementById('eov').classList.remove('show')">✕</button><div style="font-size:44px;margin-bottom:8px">🎁</div><div style="font-size:17px;font-weight:900;color:var(--g1);margin-bottom:5px">مستنياك!</div><div style="font-size:12px;color:#64748b;margin-bottom:12px;line-height:1.6">حوّل مسبقاً وخذ خصم 10% إضافي!</div><button class="ebtn" onclick="document.getElementById('eov').classList.remove('show');document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});swPay('tr')">⚡ استفيد من الخصم</button><div class="eskip" onclick="document.getElementById('eov').classList.remove('show')">لا شكراً</div></div></div>
 
 <script>
 var B={
@@ -447,14 +539,38 @@ function goPSl(n){pSc=n;pT.style.transform='translateX('+n*100+'%)';var ds=docum
 function pSl(d){goPSl((pSc-d+pTot)%pTot)}
 setInterval(function(){pSl(-1)},5000);
 
-// COUNTDOWN
-var ch=2,cm=47,cs=33;
-setInterval(function(){
-  cs--;if(cs<0){cs=59;cm--}if(cm<0){cm=59;ch--}if(ch<0){ch=cm=cs=0}
-  document.getElementById('cdH').textContent=String(ch).length<2?'0'+ch:String(ch);
-  document.getElementById('cdM').textContent=String(cm).length<2?'0'+cm:String(cm);
-  document.getElementById('cdS').textContent=String(cs).length<2?'0'+cs:String(cs);
-},1000);
+// COUNTDOWN — 3 hours persistent
+(function(){
+  var KEY='naqqy_cd_end';
+  var now=Date.now();
+  var saved=localStorage.getItem(KEY);
+  var endTime;
+  if(saved && parseInt(saved)>now){
+    endTime=parseInt(saved);
+  } else {
+    endTime=now + (3*60*60*1000);
+    try{localStorage.setItem(KEY,String(endTime))}catch(e){}
+  }
+  function pad(n){return n<10?'0'+n:String(n)}
+  setInterval(function(){
+    var diff=Math.max(0,endTime-Date.now());
+    var ch=Math.floor(diff/3600000);
+    var cm=Math.floor((diff%3600000)/60000);
+    var cs=Math.floor((diff%60000)/1000);
+    var hEl=document.getElementById('cdH');
+    var mEl=document.getElementById('cdM');
+    var sEl=document.getElementById('cdS');
+    if(hEl)hEl.textContent=pad(ch);
+    if(mEl)mEl.textContent=pad(cm);
+    if(sEl)sEl.textContent=pad(cs);
+    if(diff<=0){
+      var lbl=document.getElementById('cdLabel');
+      if(lbl)lbl.textContent='⚠️ انتهى العرض — اطلب بالسعر الحالي!';
+      var wrap=document.getElementById('cdWrap');
+      if(wrap){wrap.style.borderColor='#dc2626';wrap.style.background='#fef2f2'}
+    }
+  },1000);
+})();
 
 // STATS
 window.addEventListener('DOMContentLoaded',function(){
