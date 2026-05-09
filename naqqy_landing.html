@@ -38,7 +38,7 @@ body{font-family:'Cairo',sans-serif;background:#0f172a;color:#e2e8f0;overflow-x:
 .brand span{color:var(--g3)}
 .orig-b{background:rgba(255,215,0,.15);border:1px solid var(--gold);color:var(--gold);font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px}
 .hook{padding:10px 16px 14px;text-align:center}
-.hook-q{font-size:21px;font-weight:900;color:#fff;line-height:1.35;margin-bottom:6px}
+.hook-q{font-size:22px;font-weight:900;color:#fff;line-height:1.35;margin-bottom:6px;letter-spacing:-.3px;text-shadow:0 2px 20px rgba(59,130,246,.25)}
 .hook-q .pain{color:#fca5a5}.hook-q .sol{color:var(--g3)}
 .hook-p{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--g3);font-weight:700}
 .gif-wrap{margin:0 14px 0;border-radius:14px;overflow:hidden;border:2px solid rgba(59,130,246,.4);position:relative;background:#000}
@@ -296,6 +296,11 @@ body{padding-bottom:74px}
 <div class="bundles">
   <div class="bt">🎁 وفّر أكثر عند شرائك أكثر</div>
   <div class="bs">الشحن مجاني على جميع العروض 🚚</div>
+  <div style="background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(251,191,36,.08));border:1.5px solid rgba(245,158,11,.4);border-radius:12px;padding:10px 12px;text-align:center;margin-bottom:12px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:0;right:0;background:var(--gold);color:#000;font-size:9px;font-weight:900;padding:3px 10px;border-radius:0 12px 0 10px;font-family:'Cairo',sans-serif">🔥 عرض خاص</div>
+    <div style="font-size:13px;font-weight:700;color:var(--gold);margin-bottom:3px;margin-top:4px">اشتري علبتين واحصل على الثالثة بخصم 50%!</div>
+    <div style="font-size:11px;color:#94a3b8">تكلفة شحن واحدة — توفير ضخم 💰</div>
+  </div>
   <div class="bcards">
     <div class="bc sel" id="b1" onclick="selB(1)">
       <div class="bqty">1</div><div class="bunit">علبة</div>
@@ -405,6 +410,9 @@ body{padding-bottom:74px}
   </div>
   <div class="priv">🔒 بياناتك آمنة وتُستخدم فقط لتأكيد الطلب والتوصيل</div>
   <button class="sub-btn" id="subBtn" onclick="submitOrder()">🚀 أكّد طلبك دلوقتي</button>
+  <div style="background:rgba(30,64,175,.15);border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:10px 12px;text-align:center;margin-bottom:10px;font-size:12px;color:var(--accent)">
+    📞 سيتم التواصل معك خلال 24 ساعة لتأكيد الطلب والشحن
+  </div>
   <div class="sr"><span>🔒 آمن 100%</span><span>📦 3-5 أيام</span><span>🛡️ ضمان 30 يوم</span></div>
   <div class="suc" id="sucScr"></div>
 </div>
@@ -598,6 +606,8 @@ function updateAll(){
   document.getElementById('pNum').textContent=final;
   document.getElementById('pOld').textContent=b.oldP;
   document.getElementById('stkP').textContent=final;
+  var stkP2=document.getElementById('stkP2');
+  if(stkP2)stkP2.textContent=final;
   document.getElementById('bDisp').textContent='✅ '+b.lbl+' — '+final+' جنيه'+(payMode==='tr'?' ⚡':'');
   document.getElementById('sP').textContent='أقراص × '+b.qty;
   document.getElementById('sT').textContent=final+' ج.م';
@@ -655,7 +665,10 @@ function togFaq(el){
 
 setInterval(function(){
   var v=document.getElementById('viewers');
-  v.textContent=Math.max(11,Math.min(28,parseInt(v.textContent)+(Math.random()>.5?1:-1)));
+  var newVal=Math.max(11,Math.min(28,parseInt(v.textContent)+(Math.random()>.5?1:-1)));
+  v.textContent=newVal;
+  var sv=document.getElementById('stkV');
+  if(sv)sv.textContent=newVal;
 },3500);
 
 var nData=[
