@@ -200,7 +200,15 @@ body{padding-bottom:74px}
 </style>
 </head>
 <body>
-<script>if(typeof fbq!=='undefined'){fbq('track','ViewContent')}</script>
+<script>if(typeof fbq!=='undefined'){
+  fbq('track','ViewContent',{
+    content_name: 'أقراص تنظيف الغسالة الأصلية',
+    content_type: 'product',
+    content_ids: ['washing-tablet-12'],
+    value: 345,
+    currency: 'EGP'
+  });
+}</script>
 
 <div class="ticker">
   <div class="t-live"><div class="ldot"></div><span class="llbl">LIVE</span></div>
@@ -233,7 +241,7 @@ body{padding-bottom:74px}
   <div class="hook">
     <div class="hook-q" style="color:#fff;text-shadow:0 2px 20px rgba(59,130,246,.3)">هدومك <span class="pain">بتطلع بريحة؟</span><br>المشكلة في <span class="sol">الغسالة من جوه!</span></div>
     <div class="hook-p" style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:#93c5fd">✅ أكثر من 10,000 عميل راضي</div>
-    <a href="#orderForm" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;font-family:Cairo,sans-serif;font-size:14px;font-weight:900;padding:12px 28px;border-radius:25px;text-decoration:none;box-shadow:0 4px 20px rgba(37,99,235,.5);animation:stPulse 2s infinite">
+    <a href="#orderForm" onclick="if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{value:345,currency:'EGP'})" style="display:inline-block;margin-top:10px;background:linear-gradient(135deg,#1d4ed8,#2563eb);color:#fff;font-family:Cairo,sans-serif;font-size:14px;font-weight:900;padding:12px 28px;border-radius:25px;text-decoration:none;box-shadow:0 4px 20px rgba(37,99,235,.5);animation:stPulse 2s infinite">
       🛒 اطلب دلوقتي ↓
     </a>
   </div>
@@ -526,7 +534,7 @@ body{padding-bottom:74px}
 
 <a class="wa-float" href="https://wa.me/447853501734" target="_blank"><div class="waf-l">تواصل معنا</div>💬</a>
 
-<div class="sticky"><button class="stbtn" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">🛒 اطلب دلوقتي — <span id="stkP">345</span> ج | شحن مجاني ↓</button></div>
+<div class="sticky"><button class="stbtn" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});if(typeof fbq!=='undefined')fbq('track','InitiateCheckout',{value:B[curB].price,currency:'EGP',num_items:B[curB].qty,content_ids:['washing-tablet-12']})">🛒 اطلب دلوقتي — <span id="stkP">345</span> ج | شحن مجاني ↓</button></div>
 
 <div class="notif" id="notif"><div style="display:flex;gap:8px;align-items:flex-start"><div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--teal));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;flex-shrink:0" id="nAv">م</div><div><div style="font-size:11px;font-weight:700;color:#e2e8f0;margin-bottom:2px" id="nNm">أم أحمد</div><div style="font-size:10px;color:var(--g1)" id="nMs">✅ طلبت للتو علبتين</div><div style="font-size:9px;color:#475569;margin-top:2px" id="nTm">الآن</div></div></div></div>
 
@@ -605,7 +613,14 @@ function selB(n){
   curB=n;
   for(var i=1;i<=4;i++)document.getElementById('b'+i).classList.toggle('sel',i===n);
   updateAll();
-  if(typeof fbq!=='undefined')fbq('track','AddToCart',{value:B[n].price,currency:'EGP'});
+  if(typeof fbq!=='undefined')fbq('track','AddToCart',{
+    value: B[n].price,
+    currency: 'EGP',
+    content_name: 'أقراص تنظيف الغسالة الأصلية',
+    content_type: 'product',
+    content_ids: ['washing-tablet-12'],
+    num_items: B[n].qty
+  });
 }
 function updateAll(){
   var b=B[curB];
@@ -738,7 +753,29 @@ function submitOrder(){
   var payLabel=payMode==='tr'?('تحويل مسبق - '+curTM):'دفع عند الاستلام';
   var waf=wa||phone;
   var gsUrl='https://script.google.com/macros/s/AKfycbwwvJJWm4IeULo8EZrYh5j7ByyBosl_FjgboRBKwYzgrH5H_Bs_H7tIC-yjECiyQ-zk/exec';
-  if(typeof fbq!=='undefined')fbq('track','Purchase',{value:fp,currency:'EGP'});
+  // Hash user data for better Event Match Quality
+  function hashStr(str){
+    if(!str) return '';
+    // Simple normalization — fbq handles hashing internally with userData
+    return str.toLowerCase().trim();
+  }
+  if(typeof fbq!=='undefined'){
+    fbq('init','256380783472116',{
+      em: '',
+      fn: hashStr(name),
+      ph: hashStr(phone),
+      ct: hashStr(gov),
+      country: 'eg'
+    });
+    fbq('track','Purchase',{
+      value: fp,
+      currency: 'EGP',
+      content_name: pn,
+      content_type: 'product',
+      num_items: b.qty,
+      content_ids: ['washing-tablet-12']
+    });
+  }
   // Send as POST with JSON — matches Apps Script doPost
   var orderData = {
     productName: pn,
